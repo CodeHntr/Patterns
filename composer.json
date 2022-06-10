@@ -1,0 +1,16 @@
+{
+    "name": "codehntr/patterns",
+    "description": "studing of patterns",
+    "type": "library",
+    "autoload": {
+        "psr-4": {
+            "Patterns\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "CodeHntr",
+            "email": "paveltrokhanovsky@gmail.com"
+        }
+    ]
+}
