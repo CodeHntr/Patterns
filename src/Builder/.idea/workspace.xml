@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="02bd0a22-3e88-478d-88ce-1ecb66226556" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../../Strategy/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Strategy/Duck.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Strategy/FlyInterface.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Strategy/FlyWithWings.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Strategy/FlyWithoutWings.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Strategy/HighQuack.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Strategy/QuackInterface.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Strategy/RedHeadDuck.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Strategy/index.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../abstrctFctr/CsvWriter.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../abstrctFctr/JsonWriter.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../abstrctFctr/UnixCsvWriter.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../abstrctFctr/UnixJsonWriter.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../abstrctFctr/UnixWriterFactory.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../abstrctFctr/WinCsvWriter.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../abstrctFctr/WinJsonWriter.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../abstrctFctr/WinWriterFactory.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../abstrctFctr/WriterFactory.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../abstrctFctr/testAbstractFactory.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../../composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../factory/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../factory/.idea/deployment.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../factory/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../factory/.idea/patterns.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../factory/.idea/php.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../factory/CellPhone.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../factory/PhoneFactory.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../factory/PhoneInterface.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../factory/SmartPhone.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../factory/index.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../index.php" beforeDir="false" afterPath="$PROJECT_DIR$/../../index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Singleton/IamOnlyOne.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Singleton/StreetLight.php" beforeDir="false" afterPath="$PROJECT_DIR$/../Singleton/StreetLight.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Singleton/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/Parts/Chair.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../vendor/composer/InstalledVersions.php" beforeDir="false" afterPath="$PROJECT_DIR$/../../vendor/composer/InstalledVersions.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../vendor/composer/autoload_classmap.php" beforeDir="false" afterPath="$PROJECT_DIR$/../../vendor/composer/autoload_classmap.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../vendor/composer/autoload_psr4.php" beforeDir="false" afterPath="$PROJECT_DIR$/../../vendor/composer/autoload_psr4.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../vendor/composer/autoload_real.php" beforeDir="false" afterPath="$PROJECT_DIR$/../../vendor/composer/autoload_real.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../vendor/composer/autoload_static.php" beforeDir="false" afterPath="$PROJECT_DIR$/../../vendor/composer/autoload_static.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../vendor/composer/installed.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../vendor/composer/installed.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../vendor/composer/installed.php" beforeDir="false" afterPath="$PROJECT_DIR$/../../vendor/composer/installed.php" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings">
+    <execution />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2AqUKLt80vRuIPivIEJFtYb8FLs" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="web-ide.project.structure" />
+    <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Sites\patterns\src\Builder" />
+    </key>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="02bd0a22-3e88-478d-88ce-1ecb66226556" name="Changes" comment="" />
+      <created>1655736543900</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1655736543900</updated>
+      <workItem from="1655736545100" duration="5016000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>

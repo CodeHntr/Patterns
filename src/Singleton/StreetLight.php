@@ -1,8 +1,11 @@
 <?php
 
+namespace Patterns\Singleton;
+
+
 class StreetLight
 {
-    public static $name;
+    private static $instance;
     private $field;
 
     private function __construct()
@@ -19,11 +22,11 @@ class StreetLight
 
     public static function getInstance(): StreetLight
     {
-        if (self::$name === null) {
-            self::$name = new self();
+        if (self::$instance === null) {
+            self::$instance = new self();
         }
 
-        return self::$name;
+        return self::$instance;
     }
 
     public function getField()
@@ -36,9 +39,3 @@ class StreetLight
         $this->field = $field;
     }
 }
-
-$streetlight = StreetLight::getInstance();
-$streetlight->setField('On');
-
-$streetlight2 = StreetLight::getInstance();
-echo $streetlight2->getField();

@@ -12,5 +12,8 @@
             "name": "CodeHntr",
             "email": "paveltrokhanovsky@gmail.com"
         }
-    ]
+    ],
+    "require": {
+        "phpunit/phpunit": "^9.5"
+    }
 }

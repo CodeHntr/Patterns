@@ -1,0 +1,1 @@
+{"version":1,"defects":{"Patterns\\DirectorTest::testCanBuildTruck":4,"Patterns\\DirectorTest::testCanBuildCar":4},"times":{"Patterns\\DirectorTest::testCanBuildTruck":0.01,"Patterns\\DirectorTest::testCanBuildCar":0.001}}
