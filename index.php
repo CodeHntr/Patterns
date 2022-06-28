@@ -141,8 +141,3 @@ function prototype()
     echo "</pre>";
 }
 
-
-die;
-
-
-
