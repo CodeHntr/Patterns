@@ -9,9 +9,9 @@ class Director
 {
     public function build(Builder $builder): Furniture
     {
-        $this->createFurniture();
-        $this->addLeg();
-        $this->addCover();
+        $builder->createFurniture();
+        $builder->addLeg();
+        $builder->addCover();
 
         return $builder->getFurniture();
     }

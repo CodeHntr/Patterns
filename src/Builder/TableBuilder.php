@@ -2,7 +2,6 @@
 
 namespace Patterns\Builder;
 
-use Patterns\Builder\Builder;
 use Patterns\Builder\Parts\Furniture;
 use Patterns\Builder\Parts\Leg;
 use Patterns\Builder\Parts\Cover;
@@ -22,15 +21,15 @@ class TableBuilder implements Builder
 
     public function addCover()
     {
-        $this->table->setPart('Table covver', new Cover());
+        $this->table->setPart('Table cover', new Cover());
     }
 
     public function createFurniture()
     {
-      $this->table = new Table();
+        $this->table = new Table();
     }
 
-    public function getFurniture()
+    public function getFurniture(): Furniture
     {
         return $this->table;
     }

@@ -4,8 +4,6 @@ namespace Patterns\Builder\Parts;
 
 require "./vendor/autoload.php";
 
-use Patterns\Builder\Parts\Chair;
-use Patterns\Builder\Parts\Table;
 use Patterns\Builder\TableBuilder;
 use Patterns\Builder\ChairBuilder;
 use Patterns\Builder\Director;
@@ -15,18 +13,20 @@ class DirectorTest extends TestCase
 {
     public function testCanBuildTable()
     {
-        $tableBuildor = new TableBuilder();
-        $newFurniture = (new Director()->build($tableBuildor));
+        $tableBuilder = new TableBuilder();
+        $newFurniture = (new Director())->build($tableBuilder);
 
-        $this->asertInstanceOf(Table::class, $newFurniture);
+        $this->assertInstanceOf(Table::class, $newFurniture);
     }
 
     public function TestCanBuildChair()
     {
         $chairBuilder = new ChairBuilder();
-        $newFurniture = (new Director()->build($chairBuilder));
-        $this->asertInstanceOf(Chair::class, $newFurniture);
+        $newFurniture = (new Director())->build($chairBuilder);
+
+        $this->assertInstanceOf(Chair::class, $newFurniture);
     }
+
 
 }
 

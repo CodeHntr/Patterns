@@ -2,12 +2,10 @@
 
 namespace Patterns\Builder;
 
-use Patterns\Builder\Builder;
 use Patterns\Builder\Parts\Furniture;
 use Patterns\Builder\Parts\Leg;
 use Patterns\Builder\Parts\Cover;
 use Patterns\Builder\Parts\Chair;
-
 
 class ChairBuilder implements Builder
 {
@@ -26,13 +24,14 @@ class ChairBuilder implements Builder
         $this->chair->setPart('Seat Cover', new Cover());
     }
 
-    public function createFurniture()
+    public function createFurniture(): void
     {
         $this->chair = new Chair();
     }
 
-    public function getFurniture()
+    public function getFurniture(): Furniture
     {
         return $this->chair;
     }
+
 }
