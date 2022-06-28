@@ -1,14 +1,37 @@
-<?php
-/**
- * Todo:
- * 3. Що таке Реквест і глобальні масиви змінних
- *
- */
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
 
-namespace Patterns;
+<a href='http://localhost/patterns/index.php'><strong>Home</strong></a>
+
+<ul>
+    <li>Creational
+        <ul>
+            <li><a href='http://localhost/patterns/index.php?type=singletone'>SingleTone</a></li>
+            <li><a href='http://localhost/patterns/index.php?type=abstractFactory'>Abstract Factory</a></li>
+            <li><a href='http://localhost/patterns/index.php?type=factory'>Factory</a></li>
+            <li><a href='http://localhost/patterns/index.php?type=builder'>Builder</a></li>
+            <li><a href='http://localhost/patterns/index.php?type=prototype'>Prototype</a></li>
+        </ul>
+    </li>
+    <li>Structure
+        <ul>
+            <li></li>
+        </ul>
+    </li>
+
+</ul>
+
+<?php
 
 require './vendor/autoload.php';
-
 
 use Patterns\Builder\ChairBuilder;
 use Patterns\Builder\Director;
@@ -20,18 +43,6 @@ use Patterns\AbstractFactory\NikeFactory;
 use Patterns\FactoryExample\WalletFactory;
 use Patterns\Prototype\Bmw;
 use Patterns\Prototype\Mercedes;
-
-
-echo "<ul>
-
-<li><a href='http://localhost/patterns/index.php?type=singletone'>SingleTone</a></li>
-<li><a href='http://localhost/patterns/index.php?type=abstractFactory'>Abstract Factory</a></li>
-<li><a href='http://localhost/patterns/index.php?type=factory'>Factory</a></li>
-<li><a href='http://localhost/patterns/index.php?type=builder'>Builder</a></li>
-<li><a href='http://localhost/patterns/index.php?type=prototype'>Prototype</a></li>
-
-</ul>";
-
 
 switch ($_REQUEST['type']):
     case "singletone":
@@ -141,3 +152,7 @@ function prototype()
     echo "</pre>";
 }
 
+?>
+
+</body>
+</html>
