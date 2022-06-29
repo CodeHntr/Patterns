@@ -1,11 +1,11 @@
 <!doctype html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Patterns</title>
 </head>
 <body>
 
@@ -23,7 +23,7 @@
     </li>
     <li>Structure
         <ul>
-            <li></li>
+            <li><a href='http://localhost/patterns/index.php?type=adapter'>Adapter</a></li>
         </ul>
     </li>
 
@@ -43,6 +43,9 @@ use Patterns\AbstractFactory\NikeFactory;
 use Patterns\FactoryExample\WalletFactory;
 use Patterns\Prototype\Bmw;
 use Patterns\Prototype\Mercedes;
+use Patterns\Adapter\MyWallet;
+use Patterns\Adapter\walletKindle;
+use Patterns\Adapter\EWalletAdapter;
 
 switch ($_REQUEST['type']):
     case "singletone":
@@ -59,6 +62,9 @@ switch ($_REQUEST['type']):
         break;
     case "prototype":
         prototype();
+        break;
+    case "adapter":
+        adapter();
         break;
 
 
@@ -150,6 +156,28 @@ function prototype()
     echo "<pre>";
     var_dump($mercedes);
     echo "</pre>";
+}
+
+function adapter()
+{
+    $wallet = new MyWallet();
+    $wallet->open();
+    $wallet->putMoney(700);
+    $wallet->takeMoney(14);
+    $wallet->takeMoney(35);
+    $wallet->takeMoney(19);
+    echo "В гаманці залишилось " . $wallet->getSum() . "uah <br />";
+
+    $walletKindle = new walletKindle();
+    $ewallet = new EWalletAdapter($walletKindle);
+
+    $ewallet->open();
+    $ewallet->putMoney(456);
+    $ewallet->takeMoney(12);
+    $ewallet->takeMoney(14);
+    $ewallet->takeMoney(73);
+    echo "На балансі " . $ewallet->getSum() . " uah ";
+    echo "Ліміт " . $ewallet->getLimit() . " uah";
 }
 
 ?>
