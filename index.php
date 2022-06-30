@@ -24,6 +24,9 @@
     <li>Structure
         <ul>
             <li><a href='http://localhost/patterns/index.php?type=adapter'>Adapter</a></li>
+            <li><a href='http://localhost/patterns/index.php?type=bridge'>Bridge</a></li>
+            <li><a href='http://localhost/patterns/index.php?type=composite'>Composite</a></li>
+            <li><a href='http://localhost/patterns/index.php?type=decorator'>Decorator</a></li>
         </ul>
     </li>
 
@@ -46,6 +49,15 @@ use Patterns\Prototype\Mercedes;
 use Patterns\Adapter\MyWallet;
 use Patterns\Adapter\walletKindle;
 use Patterns\Adapter\EWalletAdapter;
+use Patterns\Bridge\Car;
+use Patterns\Bridge\RedPaint;
+use Patterns\Bridge\YellowPaint;
+use Patterns\Bridge\BMW as BMWBridge;
+use Patterns\Decorator\Phone;
+use Patterns\Decorator\MyPhone;
+use Patterns\Decorator\CoverDecorator;
+use Patterns\Decorator\GlassDecorator;
+
 
 switch ($_REQUEST['type']):
     case "singletone":
@@ -65,6 +77,15 @@ switch ($_REQUEST['type']):
         break;
     case "adapter":
         adapter();
+        break;
+    case "bridge":
+        bridge();
+        break;
+    case "composite":
+        composite();
+        break;
+    case "decorator":
+        decorator();
         break;
 
 
@@ -122,6 +143,8 @@ function factory()
     echo $EWallet->spend() . "<br/>";
 }
 
+// Testing Builder
+
 function builder()
 {
     echo "<h1>Builder</h1>";
@@ -138,6 +161,8 @@ function builder()
     print_r($table->getParts());
     echo "</pre>";
 }
+
+// Testing Prototype
 
 function prototype()
 {
@@ -157,6 +182,8 @@ function prototype()
     var_dump($mercedes);
     echo "</pre>";
 }
+
+// Testing Adapter
 
 function adapter()
 {
@@ -178,6 +205,47 @@ function adapter()
     $ewallet->takeMoney(73);
     echo "На балансі " . $ewallet->getSum() . " uah ";
     echo "Ліміт " . $ewallet->getLimit() . " uah";
+}
+
+// Testing Bridge
+
+function bridge()
+{
+    $implementation = new RedPaint();
+    $abstraction = new Car($implementation);
+    clientCodeBridge($abstraction);
+    echo "<br />";
+
+    $implementation2 = new YellowPaint();
+    $abstraction2 = new BMWBridge($implementation2);
+    clientCodeBridge($abstraction2);
+}
+
+function composite()
+{
+}
+
+function decorator()
+{
+    $simple = new MyPhone();
+    echo "Отримав простий телефон<br />";
+    clientCodeDecor($simple);
+    echo "<br />";
+
+    $decorator1 = new CoverDecorator($simple);
+    $decorator2 = new GlassDecorator($decorator1);
+    echo "Тепер у мене є декорований телефон:<br/>";
+    clientCodeDecor($decorator2);
+}
+
+function clientCodeBridge(Car $abstraction)
+{
+    echo $abstraction->paint();
+}
+
+function clientCodeDecor(Phone $component)
+{
+    echo "RESULT: " . $component->apply();
 }
 
 ?>
