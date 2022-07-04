@@ -11,7 +11,7 @@ class Subsystem1
 
     public function deliverProduct(): string
     {
-        return "Річ обрано та готується до відправлення\n";
+        return "Річ обрано та готується до відправлення";
     }
 
 }
