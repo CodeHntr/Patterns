@@ -59,6 +59,8 @@ use Patterns\Decorator\MyPhone;
 use Patterns\Decorator\CoverDecorator;
 use Patterns\Decorator\GlassDecorator;
 use Patterns\Facade\Facade;
+use Patterns\Facade\Subsystem2;
+use Patterns\Facade\Subsystem1;
 //use Patterns\Lightweight\FlyweightFactory;
 //use Patterns\Proxy\Subject;
 //use Patterns\Proxy\RealSubject;
@@ -256,16 +258,16 @@ function decorator()
 
 // Testing Facade
 
-//function facade()
-//{
-//    echo "<h1>Facade</h1>";
-//
-////    $subsystem1 = new Subsystem1();
-////    $subsystem2 = new Subsystem2();
-//    $facade = new Facade();
-//
-//    clientCodeFacade($facade);
-//}
+function facade()
+{
+    echo "<h1>Facade</h1>";
+
+    $subsystem1 = new Subsystem1();
+    $subsystem2 = new Subsystem2();
+    $facade = new Facade();
+
+    clientCodeFacade($facade);
+}
 
 //Testing Lightweight
 
@@ -345,22 +347,22 @@ function clientCodeBridge(Car $abstraction)
     echo $abstraction->paint();
 }
 
-//function clientCodeDecor(Phone $component)
-//{
-//    echo "RESULT: " . $component->apply();
-//}
-//
-//function clientCodeFacade(Facade $facade)
-//{
-//    echo $facade->operation();
-//}
-//
+function clientCodeDecor(Phone $component)
+{
+    echo "RESULT: " . $component->apply();
+}
+
+function clientCodeFacade(Facade $facade)
+{
+    echo $facade->operation();
+}
+
 //function clientCodeProxy(Subject $subject)
 //{
 //    $subject->request();
 //}
 //
-//?>
+?>
 
 </body>
 </html>
