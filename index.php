@@ -27,6 +27,7 @@
             <li><a href='http://localhost/patterns/index.php?type=bridge'>Bridge</a></li>
             <li><a href='http://localhost/patterns/index.php?type=composite'>Composite</a></li>
             <li><a href='http://localhost/patterns/index.php?type=decorator'>Decorator</a></li>
+            <li><a href='http://localhost/patterns/index.php?type=facade'>Facade</a></li>
         </ul>
     </li>
 
@@ -57,7 +58,11 @@ use Patterns\Decorator\Phone;
 use Patterns\Decorator\MyPhone;
 use Patterns\Decorator\CoverDecorator;
 use Patterns\Decorator\GlassDecorator;
-
+use Patterns\Facade\Facade;
+//use Patterns\Lightweight\FlyweightFactory;
+//use Patterns\Proxy\Subject;
+//use Patterns\Proxy\RealSubject;
+//use Patterns\Proxy\Proxy;
 
 switch ($_REQUEST['type']):
     case "singletone":
@@ -87,7 +92,9 @@ switch ($_REQUEST['type']):
     case "decorator":
         decorator();
         break;
-
+    case "facade":
+        facade();
+        break;
 
 endswitch;
 
@@ -176,10 +183,11 @@ function prototype()
     echo "</pre>";
 
     $mercedesPrototype = new Mercedes();
+    $mercedesPrototype->setCarBody("Truck");
     $mercedes = clone $mercedesPrototype;
-    $mercedes->setCarBody("Truck");
+    $mercedes->setCarBody("sedan");
     echo "<pre>";
-    var_dump($mercedes);
+    var_dump($mercedesPrototype);
     echo "</pre>";
 }
 
@@ -187,6 +195,8 @@ function prototype()
 
 function adapter()
 {
+    echo "<h1>Adapter</h1>";
+
     $wallet = new MyWallet();
     $wallet->open();
     $wallet->putMoney(700);
@@ -211,6 +221,8 @@ function adapter()
 
 function bridge()
 {
+    echo "<h1>Bridge</h1>";
+
     $implementation = new RedPaint();
     $abstraction = new Car($implementation);
     clientCodeBridge($abstraction);
@@ -225,8 +237,12 @@ function composite()
 {
 }
 
+// Testing Decorator
+
 function decorator()
 {
+    echo "<h1>Decorator</h1>";
+
     $simple = new MyPhone();
     echo "Отримав простий телефон<br />";
     clientCodeDecor($simple);
@@ -238,17 +254,113 @@ function decorator()
     clientCodeDecor($decorator2);
 }
 
+// Testing Facade
+
+//function facade()
+//{
+//    echo "<h1>Facade</h1>";
+//
+////    $subsystem1 = new Subsystem1();
+////    $subsystem2 = new Subsystem2();
+//    $facade = new Facade();
+//
+//    clientCodeFacade($facade);
+//}
+
+//Testing Lightweight
+
+//function lightweight()
+//{
+//    echo "<h1>Lightweight</h1>";
+//
+//    $factory = new FlyweightFactory([
+//        ["Chevrolet", "Camaro2018", "pink"],
+//        ["Mercedes-benz", "c300", "black"],
+//        ["Mercedes-benz", "c500", "red"],
+//        ["BMW", "M5", "red"],
+//        ["BMW", "x6", "white"],
+//    ]);
+//    $factory->listFlyweights();
+//
+//    function addCarToPoliceDatabase(
+//        FlyweightFactory $ff,
+//        $plates,
+//        $owner,
+//        $brand,
+//        $model,
+//        $color
+//    ) {
+//        echo "Client: Ddding a car to database.";
+//        $flyweight = $ff->getFlyweight([$brand, $model, $color]);
+//
+//
+//        // The client code either stores or calculates extrinsic state and passes it
+//        // to the flyweight's methods.
+//        $flyweight->operation([$plates, $owner]);
+//    }
+//
+//    addCarToPoliceDatabase(
+//        $factory,
+//        "CL234IR",
+//        "James Doe",
+//        "BMW",
+//        "M5",
+//        "red",
+//    );
+//
+//    addCarToPoliceDatabase(
+//        $factory,
+//        "CL234IR",
+//        "James Doe",
+//        "BMW",
+//        "X1",
+//        "red",
+//    );
+//
+//    $factory->listFlyweights();
+//}
+//
+//// Testing Subsitute
+//
+//function proxy()
+//{
+//    echo "<h1>Proxy</h1>";
+//
+//    echo "Client: Executing the client code with a real subject:";
+//    $realSubject = new RealSubject();
+//    clientCodeProxy($realSubject);
+//
+//    echo "<br />";
+//
+//    echo "Client: Executing the same client code with a proxy:";
+//    $proxy = new Proxy($realSubject);
+//    clientCodeProxy($proxy);
+//}
+
+
+// Clients functions
+
 function clientCodeBridge(Car $abstraction)
 {
     echo $abstraction->paint();
 }
 
-function clientCodeDecor(Phone $component)
-{
-    echo "RESULT: " . $component->apply();
-}
-
-?>
+//function clientCodeDecor(Phone $component)
+//{
+//    echo "RESULT: " . $component->apply();
+//}
+//
+//function clientCodeFacade(Facade $facade)
+//{
+//    echo $facade->operation();
+//}
+//
+//function clientCodeProxy(Subject $subject)
+//{
+//    $subject->request();
+//}
+//
+//?>
 
 </body>
 </html>
