@@ -19,11 +19,11 @@ class Facade
     public function reaize(): string
     {
         $result = "Facade initializes subsystems:\n";
-        $result .= $this->subsystem1->operation1();
-        $result .= $this->subsystem2->operation1();
+        $result .= $this->subsystem1->searchProduct();
+        $result .= $this->subsystem2->searchProduct();
         $result .= "Facade orders subsystems to perform the action:\n";
-        $result .= $this->subsystem1->operationN();
-        $result .= $this->subsystem2->operationZ();
+        $result .= $this->subsystem1->sendProduct();
+        $result .= $this->subsystem2->moveProduct();
 
         return $result;
     }
