@@ -9,9 +9,9 @@ class Subsystem1
         return "Товар готовий до дій.";
     }
 
-    public function deliverProduct(): string
+    public function sendProduct(): string
     {
-        return "Річ обрано та готується до відправлення";
+        return "Товар відправлено!";
     }
 
 }

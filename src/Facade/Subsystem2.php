@@ -6,7 +6,12 @@ class Subsystem2
 {
     public function searchProduct(): string
     {
-        return "Subsystem2: Готова! ";
+        return "Товар готовий до дій! ";
+    }
+
+    public function moveProduct(): string
+    {
+        return "Товар переміщено";
     }
 
 }
