@@ -264,7 +264,7 @@ function facade()
 
     $subsystem1 = new Subsystem1();
     $subsystem2 = new Subsystem2();
-    $facade = new Facade();
+    $facade = new Facade($subsystem1, $subsystem2);
 
     clientCodeFacade($facade);
 }
@@ -340,6 +340,9 @@ function facade()
 //}
 
 
+
+
+
 // Clients functions
 
 function clientCodeBridge(Car $abstraction)
@@ -354,7 +357,7 @@ function clientCodeDecor(Phone $component)
 
 function clientCodeFacade(Facade $facade)
 {
-    echo $facade->operation();
+    echo $facade->reaize();
 }
 
 //function clientCodeProxy(Subject $subject)

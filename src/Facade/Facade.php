@@ -4,9 +4,9 @@ namespace Patterns\Facade;
 
 class Facade
 {
-    protected $subsystem1;
+    protected Subsystem1 $subsystem1;
 
-    protected $subsystem2;
+    protected Subsystem2 $subsystem2;
 
     public function __construct(
         Subsystem1 $subsystem1 = null,
@@ -18,12 +18,12 @@ class Facade
 
     public function reaize(): string
     {
-        $result = "Facade initializes subsystems:\n";
-        $result .= $this->subsystem1->searchProduct();
-        $result .= $this->subsystem2->searchProduct();
-        $result .= "Facade orders subsystems to perform the action:\n";
-        $result .= $this->subsystem1->sendProduct();
-        $result .= $this->subsystem2->moveProduct();
+        $result = "Фасад Ініціалізує системи:<br />";
+        $result .= $this->subsystem1->searchProduct() . "<br />";
+        $result .= $this->subsystem2->searchProduct() . "<br />";
+        $result .= "Фасад наказує підсистемам виконувати дії: <br />";
+        $result .= $this->subsystem1->sendProduct() . "<br />";
+        $result .= $this->subsystem2->moveProduct() . "<br />";
 
         return $result;
     }
