@@ -15,11 +15,6 @@ class Branch extends Component
         $this->children = [];
     }
 
-    public function getInfo(): string
-    {
-        return "";
-    }
-
     public function add(Component $component): void
     {
         $this->children[] = $component;
@@ -38,6 +33,16 @@ class Branch extends Component
     public function isComposite(): bool
     {
         return true;
+    }
+
+    public function getInfo(): string
+    {
+        $results = [];
+        foreach ($this->children as $child) {
+            $results[] = $child->getInfo();
+        }
+
+        return "Branch(" . implode("+", $results) . ")";
     }
 }
 
