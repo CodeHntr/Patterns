@@ -25,5 +25,15 @@ class Branch extends Component
         $this->children[] = $component;
         $component->setParent($this);
     }
+
+    public function remove(Component $component): void
+    {
+        foreach ($this->children as $index => $child) {
+            if ($child === $component) {
+                unset($this->children[$index]);
+            }
+        }
+    }
+
 }
 
