@@ -14,4 +14,9 @@ class Fruit extends Component
         $this->children = [];
     }
 
+    public function add(Component $component): void
+    {
+        $this->children[] = $component;
+        $component->setParent($this);
+    }
 }
