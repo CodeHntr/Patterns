@@ -11,4 +11,12 @@ abstract class Component
         $this->parent = $parent;
     }
 
+    public function getParent(): Component
+    {
+        return $this->parent;
+    }
+
+    public function add(Component $component): void
+    {
+    }
 }
