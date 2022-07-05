@@ -35,5 +35,9 @@ class Branch extends Component
         }
     }
 
+    public function isComposite(): bool
+    {
+        return true;
+    }
 }
 
