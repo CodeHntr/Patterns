@@ -28,4 +28,6 @@ abstract class Component
     {
         return false;
     }
+
+    abstract public function getInfo(): string;
 }
