@@ -34,4 +34,14 @@ class Fruit extends Component
         return true;
     }
 
+    public function getInfo(): string
+    {
+        $results = [];
+        foreach ($this->children as $child) {
+            $results[] = $child->getInfo();
+        }
+
+        return "Fruit(" . implode("+", $results) . ")";
+    }
+
 }
