@@ -19,4 +19,8 @@ abstract class Component
     public function add(Component $component): void
     {
     }
+
+    public function remove(Component $component): void
+    {
+    }
 }
