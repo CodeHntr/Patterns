@@ -19,5 +19,11 @@ class Branch extends Component
     {
         return "";
     }
+
+    public function add(Component $component): void
+    {
+        $this->children[] = $component;
+        $component->setParent($this);
+    }
 }
 
