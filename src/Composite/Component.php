@@ -10,4 +10,9 @@ abstract class Component
     {
         $this->parent = $parent;
     }
+
+    public function getParent(): Component
+    {
+        return $this->parent;
+    }
 }
