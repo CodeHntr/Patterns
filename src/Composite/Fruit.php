@@ -1,6 +1,6 @@
 <?php
 
-use Patterns\Composite\Component;
+namespace Patterns\Composite;
 
 class Fruit extends Component
 {
@@ -43,5 +43,4 @@ class Fruit extends Component
 
         return "Fruit(" . implode("+", $results) . ")";
     }
-
 }
