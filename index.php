@@ -62,7 +62,7 @@ use Patterns\Facade\Subsystem2;
 use Patterns\Facade\Subsystem1;
 use Patterns\Composite\Leaf;
 use Patterns\Composite\Branch;
-use Patterns\Composite\Fruct;
+use Patterns\Composite\Fruit;
 
 //use Patterns\Lightweight\FlyweightFactory;
 //use Patterns\Proxy\Subject;
@@ -247,7 +247,7 @@ function composite()
     $branch2 = new Branch();
     $leaf1 = new Leaf("Листок");
     $leaf2 = new Leaf("Другий листок");
-    $apple = new Fruct();
+    $apple = new Fruit();
     $apple->add($leaf1);
     $composite->add($leaf1);
     $composite->add($leaf2);
