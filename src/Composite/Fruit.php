@@ -28,4 +28,10 @@ class Fruit extends Component
             }
         }
     }
+
+    public function isComposite(): bool
+    {
+        return true;
+    }
+
 }
