@@ -30,7 +30,6 @@
             <li><a href='http://localhost/patterns/index.php?type=facade'>Facade</a></li>
         </ul>
     </li>
-
 </ul>
 
 <?php
@@ -61,6 +60,10 @@ use Patterns\Decorator\GlassDecorator;
 use Patterns\Facade\Facade;
 use Patterns\Facade\Subsystem2;
 use Patterns\Facade\Subsystem1;
+use Patterns\Composite\Leaf;
+use Patterns\Composite\Branch;
+use Patterns\Composite\Fruct;
+
 //use Patterns\Lightweight\FlyweightFactory;
 //use Patterns\Proxy\Subject;
 //use Patterns\Proxy\RealSubject;
@@ -97,6 +100,7 @@ switch ($_REQUEST['type']):
     case "facade":
         facade();
         break;
+
 
 endswitch;
 
@@ -237,6 +241,23 @@ function bridge()
 
 function composite()
 {
+    echo "<h1>Composite</h1>";
+
+    $composite = new Branch();
+    $branch2 = new Branch();
+    $leaf1 = new Leaf("Листок");
+    $leaf2 = new Leaf("Другий листок");
+    $apple = new Fruct();
+    $apple->add($leaf1);
+    $composite->add($leaf1);
+    $composite->add($leaf2);
+    $composite->add($branch2);
+    $composite->add($apple);
+    echo $composite->getInfo() . "<br>";
+    $composite->remove($leaf1);
+    echo $composite->getInfo() . "<br>";
+    $composite->remove($branch2);
+    echo $composite->getInfo() . "<br>";
 }
 
 // Testing Decorator
@@ -338,9 +359,6 @@ function facade()
 //    $proxy = new Proxy($realSubject);
 //    clientCodeProxy($proxy);
 //}
-
-
-
 
 
 // Clients functions
