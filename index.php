@@ -60,6 +60,7 @@ use Patterns\Decorator\GlassDecorator;
 use Patterns\Facade\Facade;
 use Patterns\Facade\Subsystem2;
 use Patterns\Facade\Subsystem1;
+use Patterns\Composite\Component;
 use Patterns\Composite\Leaf;
 use Patterns\Composite\Branch;
 use Patterns\Composite\Fruit;
@@ -243,21 +244,32 @@ function composite()
 {
     echo "<h1>Composite</h1>";
 
-    $composite = new Branch();
+
+    $simple = new Leaf("Я листок");
+    clientCodeComposite1($simple);
+    echo "<br />";
+
+    $tree = new Branch();
     $branch2 = new Branch();
     $leaf1 = new Leaf("Листок");
     $leaf2 = new Leaf("Другий листок");
     $apple = new Fruit();
     $apple->add($leaf1);
-    $composite->add($leaf1);
-    $composite->add($leaf2);
-    $composite->add($branch2);
-    $composite->add($apple);
-    echo $composite->getInfo() . "<br>";
-    $composite->remove($leaf1);
-    echo $composite->getInfo() . "<br>";
-    $composite->remove($branch2);
-    echo $composite->getInfo() . "<br>";
+    $tree->add($leaf1);
+    $tree->add($leaf2);
+    $tree->add($branch2);
+    $tree->add($apple);
+    echo $tree->getInfo() . "<br>";
+    $tree->remove($leaf1);
+    echo $tree->getInfo() . "<br>";
+    $tree->remove($branch2);
+
+    clientCodeComposite1($tree);
+    echo "<br />";
+
+    clientCodeComposite2($tree, $simple);
+
+
 }
 
 // Testing Decorator
@@ -376,6 +388,20 @@ function clientCodeDecor(Phone $component)
 function clientCodeFacade(Facade $facade)
 {
     echo $facade->reaize();
+}
+
+function clientCodeComposite1(Component $component)
+{
+    echo "Result:" . $component->getInfo();
+}
+
+function clientCodeComposite2(Component $component1, Component $component2)
+{
+    if ($component1->isComposite()) {
+        $component1->add($component2);
+    }
+
+    echo "Result:" . $component1->getInfo();
 }
 
 //function clientCodeProxy(Subject $subject)
