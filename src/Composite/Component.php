@@ -23,4 +23,9 @@ abstract class Component
     public function remove(Component $component): void
     {
     }
+
+    public function isComposite(): bool
+    {
+        return false;
+    }
 }
