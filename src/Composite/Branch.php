@@ -10,6 +10,11 @@ class Branch extends Component
      */
     protected array $children;
 
+    public function __construct()
+    {
+        $this->children = [];
+    }
+
     public function getInfo(): string
     {
         return "";
