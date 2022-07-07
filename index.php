@@ -337,6 +337,8 @@ function flyweight()
 
 function proxy()
 {
+    echo "<h1>Proxy</h1>>";
+
     function proxy()
     {
         $lyrics = new Lyrics();
