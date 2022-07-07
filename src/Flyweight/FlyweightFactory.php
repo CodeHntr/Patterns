@@ -14,4 +14,11 @@ class FlyweightFactory
         }
     }
 
+    private function getKey(array $state): string
+    {
+        ksort($state);
+
+        return implode("_", $state);
+    }
+
 }
