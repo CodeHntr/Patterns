@@ -29,6 +29,7 @@
             <li><a href='http://localhost/patterns/index.php?type=decorator'>Decorator</a></li>
             <li><a href='http://localhost/patterns/index.php?type=facade'>Facade</a></li>
             <li><a href='http://localhost/patterns/index.php?type=flyweight'>Flyweight</a></li>
+            <li><a href='http://localhost/patterns/index.php?type=proxy'>Proxy</a></li>
         </ul>
     </li>
 </ul>
@@ -66,6 +67,9 @@ use Patterns\Composite\Leaf;
 use Patterns\Composite\Branch;
 use Patterns\Composite\Fruit;
 use Patterns\Flyweight\FlyweightFactory;
+use Patterns\Proxy\Song;
+use Patterns\Proxy\Lyrics;
+use Patterns\Proxy\CachingLyrics;
 
 
 
@@ -102,6 +106,9 @@ switch ($_REQUEST['type']):
         break;
     case "flyweight":
         flyweight();
+        break;
+    case "proxy":
+        proxy();
         break;
 endswitch;
 
