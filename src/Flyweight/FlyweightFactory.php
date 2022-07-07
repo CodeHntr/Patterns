@@ -39,9 +39,6 @@ class FlyweightFactory
 
         foreach ($this->flyweights as $index => $flyweight) {
             echo $index . "<br />";
-            echo "<pre>";
-            print_r($flyweight);
-            echo "</pre>";
         }
     }
 }
