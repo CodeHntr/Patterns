@@ -14,6 +14,11 @@ class CachingLyrics implements Song
      */
     private array $cache;
 
+    public function __construct(Lyrics $lyrics)
+    {
+        $this->lyrics = $lyrics;
+    }
+
     public function getSongLyrics(string $songName): string
     {
         if (!isset($this->cache[$songName])) {
