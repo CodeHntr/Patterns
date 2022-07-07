@@ -72,7 +72,6 @@ use Patterns\Proxy\Lyrics;
 use Patterns\Proxy\CachingLyrics;
 
 
-
 switch ($_REQUEST['type']):
     case "singletone":
         singleTone();
@@ -334,6 +333,30 @@ function flyweight()
     $factory->listFlyweights();
 }
 
+//Texting Proxy
+
+function proxy()
+{
+    function proxy()
+    {
+        $lyrics = new Lyrics();
+        echo "<pre>";
+        echo $lyrics->getSongLyrics("Imagine");
+        echo "</pre>";
+
+
+        echo "<br />";
+
+        $proxy = new CachingLyrics($lyrics);
+        echo "<pre>";
+        echo $proxy->getSongLyrics("Imagine");
+        echo "</pre>";
+
+        echo "<pre>";
+        echo $proxy->getSongLyrics("Imagine");
+        echo "</pre>";
+    }
+}
 
 
 /**
@@ -383,7 +406,6 @@ function ClientCodeFlyweight(
     $flyweight = $ff->getFlyweight([$profession, $age, $from]);
     $flyweight->acceptData([$name, $surname]);
 }
-
 
 
 ?>
