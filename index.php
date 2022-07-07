@@ -310,6 +310,23 @@ function facade()
 
 function flyweight()
 {
+    echo "<h1>Flyweight</h1>";
+
+    $factory = new FlyweightFactory([
+        ["Pilot", "35", "Lviv"],
+        ["Driver", "28", "Kyiv"],
+        ["Sailor", "22", "Odesa"],
+        ["Engineer", "30", "Kharkiv"],
+        ["Miner", "29", "Donetsk"],
+    ]);
+
+    $factory->listFlyweights();
+
+    ClientCodeFlyweight($factory, "Dima", "Varchenko", "Pilot", "35", "Lviv");
+
+    ClientCodeFlyweight($factory, "Dima", "Varchenko", "Sailor", "44", "Odessa");
+
+    $factory->listFlyweights();
 }
 
 
@@ -346,6 +363,19 @@ function clientCodeComposite2(Component $component1, Component $component2)
     }
 
     echo "Result:" . $component1->getInfo();
+}
+
+function ClientCodeFlyweight(
+    FlyweightFactory $ff,
+    $name,
+    $surname,
+    $profession,
+    $age,
+    $from
+) {
+    echo "<br />Client: Вносимо дані до бази даних.";
+    $flyweight = $ff->getFlyweight([$profession, $age, $from]);
+    $flyweight->acceptData([$name, $surname]);
 }
 
 
