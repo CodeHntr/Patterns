@@ -32,4 +32,16 @@ class FlyweightFactory
         return $this->flyweights[$key];
     }
 
+    public function listFlyweights(): void
+    {
+        $count = count($this->flyweights);
+        echo "FlyweightFactory: У мене $count Легковаговиків: <br />";
+
+        foreach ($this->flyweights as $index => $flyweight) {
+            echo $index . "<br />";
+            echo "<pre>";
+            print_r($flyweight);
+            echo "</pre>";
+        }
+    }
 }
