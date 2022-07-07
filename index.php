@@ -68,10 +68,6 @@ use Patterns\Composite\Fruit;
 use Patterns\Flyweight\FlyweightFactory;
 
 
-//use Patterns\Proxy\Subject;
-//use Patterns\Proxy\RealSubject;
-//use Patterns\Proxy\Proxy;
-
 
 switch ($_REQUEST['type']):
     case "singletone":
@@ -246,6 +242,8 @@ function bridge()
     clientCodeBridge($abstraction2);
 }
 
+//Testing Composite
+
 function composite()
 {
     echo "<h1>Composite</h1>";
@@ -330,6 +328,7 @@ function flyweight()
 }
 
 
+
 /**
  * CLIENT CODE FUNCTIONS
  */
@@ -377,6 +376,7 @@ function ClientCodeFlyweight(
     $flyweight = $ff->getFlyweight([$profession, $age, $from]);
     $flyweight->acceptData([$name, $surname]);
 }
+
 
 
 ?>
