@@ -28,6 +28,7 @@
             <li><a href='http://localhost/patterns/index.php?type=composite'>Composite</a></li>
             <li><a href='http://localhost/patterns/index.php?type=decorator'>Decorator</a></li>
             <li><a href='http://localhost/patterns/index.php?type=facade'>Facade</a></li>
+            <li><a href='http://localhost/patterns/index.php?type=flyweight'>Flyweight</a></li>
         </ul>
     </li>
 </ul>
@@ -64,11 +65,13 @@ use Patterns\Composite\Component;
 use Patterns\Composite\Leaf;
 use Patterns\Composite\Branch;
 use Patterns\Composite\Fruit;
+use Patterns\Flyweight\FlyweightFactory;
 
-//use Patterns\Lightweight\FlyweightFactory;
+
 //use Patterns\Proxy\Subject;
 //use Patterns\Proxy\RealSubject;
 //use Patterns\Proxy\Proxy;
+
 
 switch ($_REQUEST['type']):
     case "singletone":
@@ -101,8 +104,9 @@ switch ($_REQUEST['type']):
     case "facade":
         facade();
         break;
-
-
+    case "flyweight":
+        flyweight();
+        break;
 endswitch;
 
 //Testing SingleTone
@@ -233,6 +237,8 @@ function bridge()
     $implementation = new RedPaint();
     $abstraction = new Car($implementation);
     clientCodeBridge($abstraction);
+
+
     echo "<br />";
 
     $implementation2 = new YellowPaint();
@@ -268,8 +274,6 @@ function composite()
     echo "<br />";
 
     clientCodeComposite2($tree, $simple);
-
-
 }
 
 // Testing Decorator
@@ -302,78 +306,18 @@ function facade()
     clientCodeFacade($facade);
 }
 
-//Testing Lightweight
+// Testing Flyweight
 
-//function lightweight()
-//{
-//    echo "<h1>Lightweight</h1>";
-//
-//    $factory = new FlyweightFactory([
-//        ["Chevrolet", "Camaro2018", "pink"],
-//        ["Mercedes-benz", "c300", "black"],
-//        ["Mercedes-benz", "c500", "red"],
-//        ["BMW", "M5", "red"],
-//        ["BMW", "x6", "white"],
-//    ]);
-//    $factory->listFlyweights();
-//
-//    function addCarToPoliceDatabase(
-//        FlyweightFactory $ff,
-//        $plates,
-//        $owner,
-//        $brand,
-//        $model,
-//        $color
-//    ) {
-//        echo "Client: Ddding a car to database.";
-//        $flyweight = $ff->getFlyweight([$brand, $model, $color]);
-//
-//
-//        // The client code either stores or calculates extrinsic state and passes it
-//        // to the flyweight's methods.
-//        $flyweight->operation([$plates, $owner]);
-//    }
-//
-//    addCarToPoliceDatabase(
-//        $factory,
-//        "CL234IR",
-//        "James Doe",
-//        "BMW",
-//        "M5",
-//        "red",
-//    );
-//
-//    addCarToPoliceDatabase(
-//        $factory,
-//        "CL234IR",
-//        "James Doe",
-//        "BMW",
-//        "X1",
-//        "red",
-//    );
-//
-//    $factory->listFlyweights();
-//}
-//
-//// Testing Subsitute
-//
-//function proxy()
-//{
-//    echo "<h1>Proxy</h1>";
-//
-//    echo "Client: Executing the client code with a real subject:";
-//    $realSubject = new RealSubject();
-//    clientCodeProxy($realSubject);
-//
-//    echo "<br />";
-//
-//    echo "Client: Executing the same client code with a proxy:";
-//    $proxy = new Proxy($realSubject);
-//    clientCodeProxy($proxy);
-//}
+function flyweight()
+{
+}
 
 
+/**
+ * CLIENT CODE FUNCTIONS
+ */
 // Clients functions
+
 
 function clientCodeBridge(Car $abstraction)
 {
@@ -404,11 +348,7 @@ function clientCodeComposite2(Component $component1, Component $component2)
     echo "Result:" . $component1->getInfo();
 }
 
-//function clientCodeProxy(Subject $subject)
-//{
-//    $subject->request();
-//}
-//
+
 ?>
 
 </body>
