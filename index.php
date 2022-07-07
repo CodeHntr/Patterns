@@ -337,10 +337,8 @@ function flyweight()
 
 function proxy()
 {
-    echo "<h1>Proxy</h1>>";
+    echo "<h1>Proxy</h1>";
 
-    function proxy()
-    {
         $lyrics = new Lyrics();
         echo "<pre>";
         echo $lyrics->getSongLyrics("Imagine");
@@ -357,7 +355,7 @@ function proxy()
         echo "<pre>";
         echo $proxy->getSongLyrics("Imagine");
         echo "</pre>";
-    }
+
 }
 
 
