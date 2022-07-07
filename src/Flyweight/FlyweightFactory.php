@@ -21,4 +21,15 @@ class FlyweightFactory
         return implode("_", $state);
     }
 
+    public function getFlyweight(array $sharedState): Flyweight
+    {
+        $key = $this->getKey($sharedState);
+
+        if (!isset($this->flyweights[$key])) {
+            $this->flyweights[$key] = new Flyweight($sharedState);
+        }
+
+        return $this->flyweights[$key];
+    }
+
 }
