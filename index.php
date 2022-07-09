@@ -32,6 +32,11 @@
             <li><a href='http://localhost/patterns/index.php?type=proxy'>Proxy</a></li>
         </ul>
     </li>
+    <li>Behavioral
+        <ul>
+            <li><a href='http://localhost/patterns/index.php?type='></a></li>
+        </ul>
+    </li>
 </ul>
 
 <?php
@@ -60,14 +65,13 @@ use Patterns\Decorator\MyPhone;
 use Patterns\Decorator\CoverDecorator;
 use Patterns\Decorator\GlassDecorator;
 use Patterns\Facade\Facade;
-use Patterns\Facade\Subsystem2;
 use Patterns\Facade\Subsystem1;
+use Patterns\Facade\Subsystem2;
 use Patterns\Composite\Component;
 use Patterns\Composite\Leaf;
 use Patterns\Composite\Branch;
 use Patterns\Composite\Fruit;
 use Patterns\Flyweight\FlyweightFactory;
-use Patterns\Proxy\Song;
 use Patterns\Proxy\Lyrics;
 use Patterns\Proxy\CachingLyrics;
 
@@ -256,7 +260,7 @@ function composite()
 
 
     $simple = new Leaf("Я листок");
-    clientCodeComposite1($simple);
+    echo "Result:" . $simple->getInfo();
     echo "<br />";
 
     $tree = new Branch();
@@ -274,10 +278,10 @@ function composite()
     echo $tree->getInfo() . "<br>";
     $tree->remove($branch2);
 
-    clientCodeComposite1($tree);
+    echo "Result:" . $tree->getInfo();;
     echo "<br />";
 
-    clientCodeComposite2($tree, $simple);
+    clientCodeComposite($tree, $simple);
 }
 
 // Testing Decorator
@@ -303,9 +307,9 @@ function facade()
 {
     echo "<h1>Facade</h1>";
 
-    $subsystem1 = new Subsystem1();
-    $subsystem2 = new Subsystem2();
-    $facade = new Facade($subsystem1, $subsystem2);
+//    $subsystem1 = new Subsystem1();
+//    $subsystem2 = new Subsystem2();
+    $facade = new Facade();
 
     clientCodeFacade($facade);
 }
@@ -339,23 +343,22 @@ function proxy()
 {
     echo "<h1>Proxy</h1>";
 
-        $lyrics = new Lyrics();
-        echo "<pre>";
-        echo $lyrics->getSongLyrics("Imagine");
-        echo "</pre>";
+    $lyrics = new Lyrics();
+    echo "<pre>";
+    echo $lyrics->getSongLyrics("Imagine");
+    echo "</pre>";
 
 
-        echo "<br />";
+    echo "<br />";
 
-        $proxy = new CachingLyrics($lyrics);
-        echo "<pre>";
-        echo $proxy->getSongLyrics("Imagine");
-        echo "</pre>";
+    $proxy = new CachingLyrics($lyrics);
+    echo "<pre>";
+    echo $proxy->getSongLyrics("Imagine");
+    echo "</pre>";
 
-        echo "<pre>";
-        echo $proxy->getSongLyrics("Imagine");
-        echo "</pre>";
-
+    echo "<pre>";
+    echo $proxy->getSongLyrics("Imagine");
+    echo "</pre>";
 }
 
 
@@ -385,7 +388,7 @@ function clientCodeComposite1(Component $component)
     echo "Result:" . $component->getInfo();
 }
 
-function clientCodeComposite2(Component $component1, Component $component2)
+function clientCodeComposite(Component $component1, Component $component2)
 {
     if ($component1->isComposite()) {
         $component1->add($component2);
