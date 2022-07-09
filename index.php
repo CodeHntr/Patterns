@@ -383,11 +383,6 @@ function clientCodeFacade(Facade $facade)
     echo $facade->reaize();
 }
 
-function clientCodeComposite1(Component $component)
-{
-    echo "Result:" . $component->getInfo();
-}
-
 function clientCodeComposite(Component $component1, Component $component2)
 {
     if ($component1->isComposite()) {
