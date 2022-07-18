@@ -369,6 +369,7 @@ function proxy()
 }
 
 
+
 /**
  *
  *
@@ -418,6 +419,18 @@ function ClientCodeFlyweight(
     $flyweight->acceptData([$name, $surname]);
 }
 
+function ClientCodeChain(Handler $handler)
+{
+    foreach (["Olga", "Svitlana", "Maria", "Katrin", "Julia"] as $name) {
+        echo "Client: What is  " . $name . "name?<br />";
+        $result = $handler->handle($name);
+        if ($result) {
+            echo " " . $result;
+        } else {
+            echo $name . " is absent <br />";
+        }
+    }
+}
 
 
 
