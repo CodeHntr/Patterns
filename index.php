@@ -34,7 +34,7 @@
     </li>
     <li>Behavioral
         <ul>
-            <li><a href='http://localhost/patterns/index.php?type='></a></li>
+            <li><a href='http://localhost/patterns/index.php?type=chain'>Chain</a></li>
         </ul>
     </li>
 </ul>
@@ -74,6 +74,10 @@ use Patterns\Composite\Fruit;
 use Patterns\Flyweight\FlyweightFactory;
 use Patterns\Proxy\Lyrics;
 use Patterns\Proxy\CachingLyrics;
+use Patterns\Behavior\Chain\Handler;
+use Patterns\Behavior\Chain\SvitlanaHandler;
+use Patterns\Behavior\Chain\MariaHandler;
+use Patterns\Behavior\Chain\KatrinHandler;
 
 
 switch ($_REQUEST['type']):
@@ -112,6 +116,9 @@ switch ($_REQUEST['type']):
         break;
     case "proxy":
         proxy();
+        break;
+    case "chain":
+        chain();
         break;
 endswitch;
 
@@ -363,7 +370,13 @@ function proxy()
 
 
 /**
- * CLIENT CODE FUNCTIONS
+ *
+ *
+ *
+ *CLIENT CODE FUNCTIONS
+ *
+ *
+ *
  */
 // Clients functions
 
@@ -404,6 +417,8 @@ function ClientCodeFlyweight(
     $flyweight = $ff->getFlyweight([$profession, $age, $from]);
     $flyweight->acceptData([$name, $surname]);
 }
+
+
 
 
 ?>
