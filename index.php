@@ -285,7 +285,7 @@ function composite()
     echo $tree->getInfo() . "<br>";
     $tree->remove($branch2);
 
-    echo "Result:" . $tree->getInfo();;
+    echo "Result:" . $tree->getInfo();
     echo "<br />";
 
     clientCodeComposite($tree, $simple);
@@ -368,6 +368,22 @@ function proxy()
     echo "</pre>";
 }
 
+function chain()
+{
+    echo "<h1>Chain</h1>";
+
+    $svitlana = new SvitlanaHandler();
+    $maria = new MariaHandler();
+    $katrin = new KatrinHandler();
+
+    $svitlana->setNext($maria)->setNext($katrin);
+
+    echo "Chain: Svitlana > Maria > Katrin <br />";
+    ClientCodeChain($svitlana);
+
+    echo "Chain:  Maria > Katrin <br />";
+    ClientCodeChain($maria);
+}
 
 
 /**
@@ -422,17 +438,15 @@ function ClientCodeFlyweight(
 function ClientCodeChain(Handler $handler)
 {
     foreach (["Olga", "Svitlana", "Maria", "Katrin", "Julia"] as $name) {
-        echo "Client: What is  " . $name . "name?<br />";
+        echo "Client: What is  " . $name . " name?<br />";
         $result = $handler->handle($name);
         if ($result) {
             echo " " . $result;
         } else {
-            echo $name . " is absent <br />";
+            echo " " . $name . " is absent <br />";
         }
     }
 }
-
-
 
 ?>
 
