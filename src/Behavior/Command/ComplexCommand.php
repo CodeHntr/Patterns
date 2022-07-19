@@ -15,5 +15,11 @@ class ComplexCommand implements Command
 
     private $b;
 
+    public function __construct(Receiver $receiver, string $a, string $b)
+    {
+        $this->receiver = $receiver;
+        $this->a = $a;
+        $this->b = $b;
+    }
 
 }
