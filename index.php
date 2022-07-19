@@ -393,7 +393,17 @@ function chain()
     ClientCodeChain($maria);
 }
 
+function command()
+{
+    echo "<h1>Command</h1>";
 
+    $invoker = new Invoker();
+    $invoker->setOnStart(new PrintName("Pablo"));
+    $receiver = new Receiver();
+    $invoker->setOnFinish(new ComplexCommand($receiver, "Press button", "Save data"));
+
+    $invoker->doSomethingImportant();
+}
 
 /**
  *
