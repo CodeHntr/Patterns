@@ -35,6 +35,7 @@
     <li>Behavioral
         <ul>
             <li><a href='http://localhost/patterns/index.php?type=chain'>Chain</a></li>
+            <li><a href='http://localhost/patterns/index.php?type=command'>Command</a></li>
         </ul>
     </li>
 </ul>
@@ -78,6 +79,10 @@ use Patterns\Behavior\Chain\Handler;
 use Patterns\Behavior\Chain\SvitlanaHandler;
 use Patterns\Behavior\Chain\MariaHandler;
 use Patterns\Behavior\Chain\KatrinHandler;
+use Patterns\Behavior\Command\ComplexCommand;
+use Patterns\Behavior\Command\Invoker;
+use Patterns\Behavior\Command\Receiver;
+use Patterns\Behavior\Command\PrintName;
 
 
 switch ($_REQUEST['type']):
@@ -119,6 +124,9 @@ switch ($_REQUEST['type']):
         break;
     case "chain":
         chain();
+        break;
+    case "command":
+        command();
         break;
 endswitch;
 
@@ -384,6 +392,7 @@ function chain()
     echo "Chain:  Maria > Katrin <br />";
     ClientCodeChain($maria);
 }
+
 
 
 /**
