@@ -42,4 +42,9 @@ class AlphabeticalOrderIterator implements \Iterator
         return $this->position;
     }
 
+    public function next(): void
+    {
+        $this->position = $this->position + ($this->reverse ? -1 : 1);
+    }
+
 }
