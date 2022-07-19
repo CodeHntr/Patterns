@@ -4,7 +4,7 @@ namespace Patterns\Behavior\Mediator;
 
 class BaseComponent
 {
-    protected Mediator $mediator;
+    protected  $mediator;
 
     public function __construct(Mediator $mediator = null)
     {
