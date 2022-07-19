@@ -22,4 +22,8 @@ class WordsCollection implements \IteratorAggregate
         return new AlphabeticalOrderIterator($this);
     }
 
+    public function getReverseIterator(): \Iterator
+    {
+        return new AlphabeticalOrderIterator($this, true);
+    }
 }
