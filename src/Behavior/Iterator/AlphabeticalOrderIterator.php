@@ -14,5 +14,12 @@ class AlphabeticalOrderIterator implements \Iterator
      * @var int
      */
     private int $position = 0;
+    /**
+     * @var bool
+     *
+     */
+    private bool $reverse = false;
+
+
 
 }
