@@ -20,6 +20,11 @@ class AlphabeticalOrderIterator implements \Iterator
      */
     private bool $reverse = false;
 
+    public function __construct($collection, $reverse = false)
+    {
+        $this->collection = $collection;
+        $this->reverse = $reverse;
+    }
 
 
 }
