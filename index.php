@@ -419,12 +419,12 @@ function iterator()
     $collection->addItem("Другий елемент");
     $collection->addItem("Третій елемент");
 
-    echo "Прямий обхід:<br />";
+    echo "<strong>Прямий обхід:</strong><br />";
     foreach ($collection->getIterator() as $item) {
         echo $item . "<br />";
     }
 
-    echo "Зворотний обхід:<br />";
+    echo "<strong>Зворотний обхід:</strong><br />";
     foreach ($collection->getReverseIterator() as $item) {
         echo $item . "<br />";
     }
