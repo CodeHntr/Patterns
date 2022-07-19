@@ -24,7 +24,7 @@ class ComplexCommand implements Command
 
     public function execute(): void
     {
-        echo "ComplexCommand: Складні речі повинен виконувати об’єкт-приймач<br />";
+        echo "ComplexCommand: Приймач виконує складні речі<br />";
         $this->receiver->doSomething($this->a);
         $this->receiver->doSomethingElse($this->b);
     }
