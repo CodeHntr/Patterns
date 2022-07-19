@@ -36,6 +36,7 @@
         <ul>
             <li><a href='http://localhost/patterns/index.php?type=chain'>Chain</a></li>
             <li><a href='http://localhost/patterns/index.php?type=command'>Command</a></li>
+            <li><a href='http://localhost/patterns/index.php?type=iterator'>Iterator</a></li>
         </ul>
     </li>
 </ul>
@@ -83,6 +84,7 @@ use Patterns\Behavior\Command\ComplexCommand;
 use Patterns\Behavior\Command\Invoker;
 use Patterns\Behavior\Command\Receiver;
 use Patterns\Behavior\Command\PrintName;
+use Patterns\Behavior\Iterator\WordsCollection;
 
 
 switch ($_REQUEST['type']):
@@ -127,6 +129,9 @@ switch ($_REQUEST['type']):
         break;
     case "command":
         command();
+        break;
+    case "iterator":
+        iterator();
         break;
 endswitch;
 
@@ -404,6 +409,8 @@ function command()
 
     $invoker->doSomethingImportant();
 }
+
+
 
 /**
  *
