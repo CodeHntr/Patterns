@@ -17,4 +17,9 @@ class WordsCollection implements \IteratorAggregate
         $this->items[] = $item;
     }
 
+    public function getIterator(): \Iterator
+    {
+        return new AlphabeticalOrderIterator($this);
+    }
+
 }
