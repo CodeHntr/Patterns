@@ -12,4 +12,9 @@ class WordsCollection implements \IteratorAggregate
         return $this->items;
     }
 
+    public function addItem($item)
+    {
+        $this->items[] = $item;
+    }
+
 }
