@@ -11,4 +11,8 @@ class BaseComponent
         $this->mediator = $mediator;
     }
 
+    public function setMediator(Mediator $mediator = null)
+    {
+        $this->mediator = $mediator;
+    }
 }
