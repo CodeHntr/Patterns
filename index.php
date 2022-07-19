@@ -37,6 +37,7 @@
             <li><a href='http://localhost/patterns/index.php?type=chain'>Chain</a></li>
             <li><a href='http://localhost/patterns/index.php?type=command'>Command</a></li>
             <li><a href='http://localhost/patterns/index.php?type=iterator'>Iterator</a></li>
+            <li><a href='http://localhost/patterns/index.php?type=mediator'>Mediator</a></li>
         </ul>
     </li>
 </ul>
@@ -85,6 +86,9 @@ use Patterns\Behavior\Command\Invoker;
 use Patterns\Behavior\Command\Receiver;
 use Patterns\Behavior\Command\PrintName;
 use Patterns\Behavior\Iterator\WordsCollection;
+use Patterns\Behavior\Mediator\Component1;
+use Patterns\Behavior\Mediator\Component2;
+use Patterns\Behavior\Mediator\ConcreteMediator;
 
 
 switch ($_REQUEST['type']):
@@ -132,6 +136,9 @@ switch ($_REQUEST['type']):
         break;
     case "iterator":
         iterator();
+        break;
+    case "mediator":
+        mediator();
         break;
 endswitch;
 
@@ -429,6 +436,8 @@ function iterator()
         echo $item . "<br />";
     }
 }
+
+
 
 /**
  *
