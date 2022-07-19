@@ -22,4 +22,10 @@ class ComplexCommand implements Command
         $this->b = $b;
     }
 
+    public function execute(): void
+    {
+        echo "ComplexCommand: Складні речі повинен виконувати об’єкт-приймач<br />";
+        $this->receiver->doSomething($this->a);
+        $this->receiver->doSomethingElse($this->b);
+    }
 }
