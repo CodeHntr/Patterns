@@ -410,7 +410,25 @@ function command()
     $invoker->doSomethingImportant();
 }
 
+function iterator()
+{
+    echo "<h1>Iterator</h1>";
 
+    $collection = new WordsCollection();
+    $collection->addItem("Перший елемент");
+    $collection->addItem("Другий елемент");
+    $collection->addItem("Третій елемент");
+
+    echo "Прямий обхід:<br />";
+    foreach ($collection->getIterator() as $item) {
+        echo $item . "<br />";
+    }
+
+    echo "Зворотний обхід:<br />";
+    foreach ($collection->getReverseIterator() as $item) {
+        echo $item . "<br />";
+    }
+}
 
 /**
  *
