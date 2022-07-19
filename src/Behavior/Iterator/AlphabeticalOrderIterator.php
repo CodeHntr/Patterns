@@ -37,5 +37,9 @@ class AlphabeticalOrderIterator implements \Iterator
         return $this->collection->getItems()[$this->position];
     }
 
+    public function key(): int
+    {
+        return $this->position;
+    }
 
 }
