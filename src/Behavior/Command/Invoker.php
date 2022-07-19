@@ -15,4 +15,9 @@ class Invoker
         $this->onStart = $command;
     }
 
+    public function setOnFinish(Command $command): void
+    {
+        $this->onFinish = $command;
+    }
+
 }
