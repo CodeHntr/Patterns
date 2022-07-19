@@ -437,7 +437,21 @@ function iterator()
     }
 }
 
+function mediator()
+{
+    echo "<h1>Mediator</h1>";
 
+    $c1 = new Component1();
+    $c2 = new Component2();
+    $mediator = new ConcreteMediator($c1, $c2);
+
+    echo "Client Викликає функцію вишню.<br />";
+    $c1->getCherry();
+
+    echo "<br />";
+    echo "Client викликає бджолу<br />";
+    $c2->getBee();
+}
 
 /**
  *
