@@ -16,4 +16,17 @@ class ConcreteMediator implements Mediator
         $this->component2->setMediator($this);
     }
 
+    public function notify(object $sender, string $event): void
+    {
+        if ($event == "Вишня") {
+            echo "Посереждник реагує на Вишню та запускає відсліджуючі операції<br />";
+            $this->component1->getFact();
+        }
+
+        if ($event == "Бджола") {
+            echo "Посередник реагує на Бджолу і запускає відслідковуючі операції<br />";
+            $this->component1->getFact();
+            $this->component2->getFact();
+        }
+    }
 }
