@@ -47,4 +47,8 @@ class AlphabeticalOrderIterator implements \Iterator
         $this->position = $this->position + ($this->reverse ? -1 : 1);
     }
 
+    public function valid()
+    {
+        return isset($this->collection->getItems()[$this->position]);
+    }
 }
