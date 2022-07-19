@@ -10,4 +10,9 @@ class AlphabeticalOrderIterator implements \Iterator
      */
     private WordsCollection $collection;
 
+    /**
+     * @var int
+     */
+    private int $position = 0;
+
 }
