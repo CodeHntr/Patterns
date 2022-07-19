@@ -11,4 +11,9 @@ class PrintName implements Command
     {
         $this->payload = $payload;
     }
+
+    public function execute(): void
+    {
+        echo "PrintName: Я просто друкую (" . $this->payload . ")<br />";
+    }
 }
