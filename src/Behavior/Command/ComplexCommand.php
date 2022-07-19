@@ -11,5 +11,9 @@ class ComplexCommand implements Command
      */
     private Receiver $receiver;
 
+    private $a;
+
+    private $b;
+
 
 }
