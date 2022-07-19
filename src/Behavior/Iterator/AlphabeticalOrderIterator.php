@@ -26,5 +26,11 @@ class AlphabeticalOrderIterator implements \Iterator
         $this->reverse = $reverse;
     }
 
+    public function rewind(): void
+    {
+        $this->position = $this->reverse ?
+            count($this->collection->getItems()) - 1 : 0;
+    }
+
 
 }
