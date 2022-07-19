@@ -9,5 +9,8 @@ class Receiver
         echo "Receiver: Працює над (" . $a . ") <br />";
     }
 
-
+    public function doSomethingElse(string $b): void
+    {
+        echo "Receiver: А також працює над (" . $b . ")<br />";
+    }
 }
