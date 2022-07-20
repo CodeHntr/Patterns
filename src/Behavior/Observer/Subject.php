@@ -27,6 +27,13 @@ class Subject implements \SplSubject
         $this->observers->attach($observer);
     }
 
+    public function detach(\SplObserver $observer): void
+    {
+        $this->observers->detach($observer);
+        echo "Subject: Видалив спостерігача";
+    }
+
+
 
 }
 
