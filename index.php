@@ -41,6 +41,7 @@
             <li><a href='http://localhost/patterns/index.php?type=memento'>Memento</a></li>
             <li><a href='http://localhost/patterns/index.php?type=observer'>Observer</a></li>
             <li><a href='http://localhost/patterns/index.php?type=state'>State</a></li>
+            <li><a href='http://localhost/patterns/index.php?type=template'>Template</a></li>
         </ul>
     </li>
 </ul>
@@ -98,6 +99,9 @@ use Patterns\Behavior\Observer\Subject;
 use Patterns\Behavior\Observer\Observer1;
 use Patterns\Behavior\State\Context;
 use Patterns\Behavior\State\ConcreteStateA;
+use Patterns\Behavior\Template\AbstractClass;
+use Patterns\Behavior\Template\ConcreteClass1;
+use Patterns\Behavior\Template\ConcreteClass2;
 
 
 switch ($_REQUEST['type']):
@@ -157,6 +161,9 @@ switch ($_REQUEST['type']):
         break;
     case "state":
         state();
+        break;
+    case "template":
+        template();
         break;
 endswitch;
 
@@ -526,6 +533,8 @@ function state()
     $context->request2();
 }
 
+
+
 /**
  *
  *
@@ -587,6 +596,8 @@ function ClientCodeChain(Handler $handler)
         }
     }
 }
+
+
 
 ?>
 
