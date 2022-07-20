@@ -33,4 +33,9 @@ class Originator
         );
     }
 
+    public function save(): Memento
+    {
+        return new ConcreteMemento($this->state);
+    }
+
 }
