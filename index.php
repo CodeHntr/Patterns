@@ -39,6 +39,7 @@
             <li><a href='http://localhost/patterns/index.php?type=iterator'>Iterator</a></li>
             <li><a href='http://localhost/patterns/index.php?type=mediator'>Mediator</a></li>
             <li><a href='http://localhost/patterns/index.php?type=memento'>Memento</a></li>
+            <li><a href='http://localhost/patterns/index.php?type=observer'>Observer</a></li>
         </ul>
     </li>
 </ul>
@@ -92,6 +93,9 @@ use Patterns\Behavior\Mediator\Component2;
 use Patterns\Behavior\Mediator\ConcreteMediator;
 use Patterns\Behavior\Memento\Caretaker;
 use Patterns\Behavior\Memento\Originator;
+use Patterns\Behavior\Observer\Subject;
+use Patterns\Behavior\Observer\Observer1;
+use Patterns\Behavior\Observer\Observer2;
 
 
 switch ($_REQUEST['type']):
@@ -145,6 +149,9 @@ switch ($_REQUEST['type']):
         break;
     case "memento":
         memento();
+        break;
+    case "observer":
+        observer();
         break;
 endswitch;
 
@@ -484,6 +491,8 @@ function memento()
     echo "<br />Client: Ще раз.<br /><br />";
     $caretaker->undo();
 }
+
+
 
 /**
  *
