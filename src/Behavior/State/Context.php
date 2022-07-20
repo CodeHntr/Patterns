@@ -15,4 +15,10 @@ class Context
         $this->transitionTo($state);
     }
 
+    public function transitionTo(State $state): void
+    {
+        echo "Context: Перехід до " . get_class($state) . "<br />";
+        $this->state = $state;
+        $this->state->setContext($this);
+    }
 }
