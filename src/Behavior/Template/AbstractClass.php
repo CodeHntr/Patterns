@@ -30,4 +30,9 @@ abstract class AbstractClass
         echo "AbstractClass говоре: Але я всеодно роблю основну частину роботи<br />";
     }
 
+    abstract protected function requiredOperations1(): void;
+
+    abstract protected function requiredOperation2(): void;
+
+
 }
