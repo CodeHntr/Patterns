@@ -40,5 +40,11 @@ class Caretaker
             $this->undo();
         }
     }
-
+    public function ShowHistory(): void
+    {
+        echo "Спостерігач: ось список знімків:<br />";
+        foreach ($this->mementos as $memento) {
+            echo $memento->getName() . "<br />";
+        }
+    }
 }
