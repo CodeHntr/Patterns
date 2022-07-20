@@ -40,6 +40,7 @@
             <li><a href='http://localhost/patterns/index.php?type=mediator'>Mediator</a></li>
             <li><a href='http://localhost/patterns/index.php?type=memento'>Memento</a></li>
             <li><a href='http://localhost/patterns/index.php?type=observer'>Observer</a></li>
+            <li><a href='http://localhost/patterns/index.php?type=state'>State</a></li>
         </ul>
     </li>
 </ul>
@@ -95,7 +96,8 @@ use Patterns\Behavior\Memento\Caretaker;
 use Patterns\Behavior\Memento\Originator;
 use Patterns\Behavior\Observer\Subject;
 use Patterns\Behavior\Observer\Observer1;
-use Patterns\Behavior\Observer\Observer2;
+use Patterns\Behavior\State\Context;
+use Patterns\Behavior\State\ConcreteStateA;
 
 
 switch ($_REQUEST['type']):
@@ -152,6 +154,9 @@ switch ($_REQUEST['type']):
         break;
     case "observer":
         observer();
+        break;
+    case "state":
+        state();
         break;
 endswitch;
 
@@ -511,6 +516,8 @@ function observer()
 
     $subject->getInfo();
 }
+
+
 
 /**
  *
