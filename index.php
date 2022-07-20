@@ -517,7 +517,14 @@ function observer()
     $subject->getInfo();
 }
 
+function state()
+{
+    echo "<h1>State</h1>";
 
+    $context = new Context(new ConcreteStateA());
+    $context->request1();
+    $context->request2();
+}
 
 /**
  *
