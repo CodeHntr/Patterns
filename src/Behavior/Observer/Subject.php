@@ -33,6 +33,13 @@ class Subject implements \SplSubject
         echo "Subject: Видалив спостерігача";
     }
 
+    public function notify(): void
+    {
+        echo "Суб'єкт: Сповіщення спостерігачів...<br />";
+        foreach ($this->observers as $observer) {
+            $observer->update($this);
+        }
+    }
 
 
 }
