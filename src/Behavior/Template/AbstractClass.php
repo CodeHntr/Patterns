@@ -20,5 +20,11 @@ abstract class AbstractClass
         echo "AbstractClass говоре: Я роблю основну частину роботи<br />";
     }
 
+    protected function baseOperation2(): void
+    {
+        echo "AbstractClass говоре: Але я дозволив підкласам перевизначати деякі операції<br />";
+    }
+
+
 
 }
