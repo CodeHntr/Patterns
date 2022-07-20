@@ -38,6 +38,7 @@
             <li><a href='http://localhost/patterns/index.php?type=command'>Command</a></li>
             <li><a href='http://localhost/patterns/index.php?type=iterator'>Iterator</a></li>
             <li><a href='http://localhost/patterns/index.php?type=mediator'>Mediator</a></li>
+            <li><a href='http://localhost/patterns/index.php?type=memento'>Memento</a></li>
         </ul>
     </li>
 </ul>
@@ -89,6 +90,8 @@ use Patterns\Behavior\Iterator\WordsCollection;
 use Patterns\Behavior\Mediator\Component1;
 use Patterns\Behavior\Mediator\Component2;
 use Patterns\Behavior\Mediator\ConcreteMediator;
+use Patterns\Behavior\Memento\Caretaker;
+use Patterns\Behavior\Memento\Originator;
 
 
 switch ($_REQUEST['type']):
@@ -139,6 +142,9 @@ switch ($_REQUEST['type']):
         break;
     case "mediator":
         mediator();
+        break;
+    case "memento":
+        memento();
         break;
 endswitch;
 
@@ -451,6 +457,32 @@ function mediator()
     echo "<br />";
     echo "Client викликає бджолу<br />";
     $c2->getBee();
+}
+
+function memento()
+{
+    echo "<h1>Memento</h1>";
+
+    $originator = new Originator("super-duper-super-puper-super.");
+    $caretaker = new Caretaker($originator);
+
+    $caretaker->backup();
+    $originator->doSomething();
+
+    $caretaker->backup();
+    $originator->doSomething();
+
+    $caretaker->backup();
+    $originator->doSomething();
+
+    echo "<br />";
+    $caretaker->showHistory();
+
+    echo "<br />Client: Повертаємось назад<br /><br />";
+    $caretaker->undo();
+
+    echo "<br />Client: Ще раз.<br /><br />";
+    $caretaker->undo();
 }
 
 /**
