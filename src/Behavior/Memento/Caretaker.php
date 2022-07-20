@@ -15,4 +15,9 @@ class Caretaker
      */
     private Originator $originator;
 
+    public function __construct(Originator $originator)
+    {
+        $this->originator = $originator;
+    }
+
 }
