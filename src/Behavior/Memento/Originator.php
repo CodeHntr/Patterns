@@ -38,4 +38,9 @@ class Originator
         return new ConcreteMemento($this->state);
     }
 
+    public function restore(Memento $memento): void
+    {
+        $this->state = $memento->getState();
+        echo "Оригінатор: Мій стан був змінений до:{$this->state}<br />";
+    }
 }
