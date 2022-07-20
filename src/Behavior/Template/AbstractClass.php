@@ -15,4 +15,10 @@ abstract class AbstractClass
         $this->hook2();
     }
 
+    protected function baseOperation1(): void
+    {
+        echo "AbstractClass говоре: Я роблю основну частину роботи<br />";
+    }
+
+
 }
