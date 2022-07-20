@@ -9,4 +9,11 @@ class ConcreteMemento implements Memento
 
     private $date;
 
+    public function __construct(string $state)
+    {
+        $this->state = $state;
+
+        $this->date = date('Y-m-d H-i-s');
+    }
+
 }
