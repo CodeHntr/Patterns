@@ -9,4 +9,8 @@ class Commerce implements Component
         $visitor->visitCommerce($this);
     }
 
+    public function offerForCommerce(): string
+    {
+        return "Пропозиція для комерції від";
+    }
 }
