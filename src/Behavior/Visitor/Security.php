@@ -9,4 +9,8 @@ class Security implements Visitor
         echo $element->offerForHouse() . " Security company<br />";
     }
 
+    public function visitCommerce(Commerce $element): void
+    {
+        echo $element->offerForCommerce() . " Security company<br />";
+    }
 }
