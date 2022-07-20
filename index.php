@@ -557,7 +557,24 @@ function template()
     echo "<br />";
 }
 
+function visitor()
+{
+    echo "<h1>Visitor</h1>";
 
+    $components = [
+        new House(),
+        new Commerce()
+    ];
+
+    echo "Клієнтський код працює зі всіма відвідувачами через базовий інтерфейс Відвідувача<br />";
+    $visitor1 = new Insurance();
+    ClientCodeVisitor($components, $visitor1);
+    echo "<br />";
+
+    echo "Це дозволяє тому самому коду працювати з різноманітними типами відвідувачів <br />";
+    $visitor2 = new Security();
+    ClientCodeVisitor($components, $visitor2);
+}
 
 /**
  *
