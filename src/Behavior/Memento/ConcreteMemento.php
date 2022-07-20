@@ -16,4 +16,9 @@ class ConcreteMemento implements Memento
         $this->date = date('Y-m-d H-i-s');
     }
 
+    public function getState(): string
+    {
+        return $this->state;
+    }
+
 }
