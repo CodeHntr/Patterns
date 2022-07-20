@@ -626,8 +626,12 @@ function clientCodeTemplate(AbstractClass $class)
     $class->templateMethod();
 }
 
-
-
+function ClientCodeVisitor(array $components, Visitor $visitor)
+{
+    foreach ($components as $component) {
+        $component->accept($visitor);
+    }
+}
 
 ?>
 
