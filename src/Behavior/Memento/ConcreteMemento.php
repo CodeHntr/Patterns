@@ -21,4 +21,9 @@ class ConcreteMemento implements Memento
         return $this->state;
     }
 
+    public function getName(): string
+    {
+        return $this->date . " / (" . substr($this->state, 0, 9) . "...";
+    }
+
 }
