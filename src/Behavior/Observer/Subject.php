@@ -15,5 +15,11 @@ class Subject implements \SplSubject
      */
     private $observers;
 
+    public function __construct()
+    {
+        $this->observers = new \SplObjectStorage();
+    }
+
+
 }
 
