@@ -492,7 +492,25 @@ function memento()
     $caretaker->undo();
 }
 
+function observer()
+{
+    echo "<h1>Observer</h1>";
 
+    $subject = new Subject();
+
+    $o1 = new Observer1();
+    $subject->attach($o1);
+
+    $o2 = new Observer2();
+    $subject->attach($o2);
+
+    $subject->getInfo();
+    $subject->getInfo();
+
+    $subject->detach($o2);
+
+    $subject->getInfo();
+}
 
 /**
  *
