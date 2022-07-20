@@ -597,6 +597,10 @@ function ClientCodeChain(Handler $handler)
     }
 }
 
+function clientCodeTemplate(AbstractClass $class)
+{
+    $class->templateMethod();
+}
 
 
 ?>
