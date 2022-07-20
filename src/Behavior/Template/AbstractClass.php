@@ -38,5 +38,7 @@ abstract class AbstractClass
     {
     }
 
-
+    protected function hook2(): void
+    {
+    }
 }
