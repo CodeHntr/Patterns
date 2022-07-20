@@ -41,6 +41,12 @@ class Subject implements \SplSubject
         }
     }
 
+    public function getInfo(): void
+    {
+        echo "<br />Subject: Рандомлю число<br />";
+        $this->state = rand(0, 10);
 
+        echo "Subject: Мій стан змінений до: {$this->state}<br /><br />";
+        $this->notify();
+    }
 }
-
