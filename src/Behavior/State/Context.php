@@ -28,4 +28,8 @@ class Context
         $this->state->handle1();
     }
 
+    public function request2(): void
+    {
+        $this->state->handle2();
+    }
 }
