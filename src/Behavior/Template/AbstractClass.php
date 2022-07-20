@@ -34,5 +34,9 @@ abstract class AbstractClass
 
     abstract protected function requiredOperation2(): void;
 
+    protected function hook1(): void
+    {
+    }
+
 
 }
