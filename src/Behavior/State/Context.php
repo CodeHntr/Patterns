@@ -21,4 +21,11 @@ class Context
         $this->state = $state;
         $this->state->setContext($this);
     }
+
+
+    public function request1(): void
+    {
+        $this->state->handle1();
+    }
+
 }
