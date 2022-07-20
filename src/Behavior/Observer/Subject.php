@@ -21,5 +21,12 @@ class Subject implements \SplSubject
     }
 
 
+    public function attach(\SplObserver $observer): void
+    {
+        echo "Subject: Прикріпив спостерігача.<br />";
+        $this->observers->attach($observer);
+    }
+
+
 }
 
