@@ -25,4 +25,20 @@ class Caretaker
         echo "<br />Спостерігач: Збереження оригінальної позиції...<br />";
         $this->mementos[] = $this->originator->save();
     }
+
+    public function undo(): void
+    {
+        if (!count($this->mementos)) {
+            return;
+        }
+        $memento = array_pop($this->mementos);
+
+        echo "Спостерігач: Відновлення позиції: " . $memento->getName() . "<br />";
+        try {
+            $this->originator->restore($memento);
+        } catch (\Exception $e) {
+            $this->undo();
+        }
+    }
+
 }
