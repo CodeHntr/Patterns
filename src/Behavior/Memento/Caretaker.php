@@ -20,4 +20,9 @@ class Caretaker
         $this->originator = $originator;
     }
 
+    public function backup(): void
+    {
+        echo "<br />Спостерігач: Збереження оригінальної позиції...<br />";
+        $this->mementos[] = $this->originator->save();
+    }
 }
