@@ -9,4 +9,10 @@ class Context
      */
     private $state;
 
+
+    public function __construct(State $state)
+    {
+        $this->transitionTo($state);
+    }
+
 }
