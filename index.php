@@ -533,6 +533,19 @@ function state()
     $context->request2();
 }
 
+function template()
+{
+    echo "<h1>Template</h1>";
+    echo "Один і той же код клієнта може працювати з різними підкласами:<br />";
+
+    clientCodeTemplate(new ConcreteClass1());
+    echo "<br />";
+
+    echo "Один і той же код клієнта може працювати з різними підкласами:<br />";
+
+    clientCodeTemplate(new ConcreteClass2());
+    echo "<br />";
+}
 
 
 /**
