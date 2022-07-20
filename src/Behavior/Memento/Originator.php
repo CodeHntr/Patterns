@@ -19,5 +19,18 @@ class Originator
         $this->state = $this->generateRandomString(30);
     }
 
+    private function generateRandomString(int $lenght = 10): string
+    {
+        return substr(
+            str_shuffle(
+                str_repeat(
+                    $x = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ',
+                    ceil($lenght / strlen($x))
+                )
+            ),
+            1,
+            $lenght,
+        );
+    }
 
 }
