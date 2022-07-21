@@ -23,4 +23,8 @@ class Duck
         $this->quackBehavior = $quackBehavior;
     }
 
+    public function quack()
+    {
+        $this->quackBehavior->quack();
+    }
 }
