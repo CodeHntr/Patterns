@@ -585,6 +585,16 @@ function visitor()
     ClientCodeVisitor($components, $visitor2);
 }
 
+function strategy()
+{
+    $red_head_duck = new RedHeadDuck(new FlyWithoutWings(), new HighQuack());
+    $red_head_duck->fly();
+    echo "<br />";
+    $red_head_duck->quack();
+    echo "<br />";
+    var_dump($red_head_duck);
+}
+
 
 /**
  *
