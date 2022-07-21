@@ -41,6 +41,7 @@
             <li><a href='http://localhost/patterns/index.php?type=memento'>Memento</a></li>
             <li><a href='http://localhost/patterns/index.php?type=observer'>Observer</a></li>
             <li><a href='http://localhost/patterns/index.php?type=state'>State</a></li>
+            <li><a href='http://localhost/patterns/index.php?type=strategy'>Strategy</a></li>
             <li><a href='http://localhost/patterns/index.php?type=template'>Template</a></li>
             <li><a href='http://localhost/patterns/index.php?type=visitor'>Visitor</a></li>
         </ul>
@@ -101,6 +102,11 @@ use Patterns\Behavior\Observer\Observer1;
 use Patterns\Behavior\Observer\Observer2;
 use Patterns\Behavior\State\Context;
 use Patterns\Behavior\State\ConcreteStateA;
+use Patterns\Behavior\Strategy\RedHeadDuck;
+use Patterns\Behavior\Strategy\HighQuack;
+use Patterns\Behavior\Strategy\LowQuack;
+use Patterns\Behavior\Strategy\FlyWithWings;
+use Patterns\Behavior\Strategy\FlyWithoutWings;
 use Patterns\Behavior\Template\AbstractClass;
 use Patterns\Behavior\Template\ConcreteClass1;
 use Patterns\Behavior\Template\ConcreteClass2;
@@ -174,6 +180,9 @@ switch ($_REQUEST['type']):
         break;
     case "visitor":
         visitor();
+        break;
+    case "strategy":
+        strategy();
         break;
 endswitch;
 
@@ -575,6 +584,7 @@ function visitor()
     $visitor2 = new Security();
     ClientCodeVisitor($components, $visitor2);
 }
+
 
 /**
  *
