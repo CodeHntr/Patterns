@@ -593,6 +593,14 @@ function strategy()
     $red_head_duck->quack();
     echo "<br />";
     var_dump($red_head_duck);
+    echo "<br /><br />";
+
+    $red_head_duck2 = new RedHeadDuck(new FlyWithWings(), new LowQuack());
+    $red_head_duck2->fly();
+    echo "<br />";
+    $red_head_duck2->quack();
+    echo "<br />";
+    var_dump($red_head_duck2);
 }
 
 
