@@ -4,8 +4,13 @@ namespace Patterns\Behavior\Strategy;
 
 class Duck
 {
-    private $flyBehavior;
+    private FlyInterface $flyBehavior;
 
-    private $quackBehavior;
+    private QuackInterface $quackBehavior;
+
+    public function setFly($flyBehavior)
+    {
+        $this->flyBehavior = $flyBehavior;
+    }
 
 }
