@@ -18,4 +18,9 @@ class Duck
         $this->flyBehavior->fly();
     }
 
+    public function setQuack($quackBehavior)
+    {
+        $this->quackBehavior = $quackBehavior;
+    }
+
 }
