@@ -13,4 +13,9 @@ class Duck
         $this->flyBehavior = $flyBehavior;
     }
 
+    public function fly()
+    {
+        $this->flyBehavior->fly();
+    }
+
 }
