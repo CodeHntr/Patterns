@@ -20,4 +20,9 @@ class Model
         }
     }
 
+    public function getMessages(): array
+    {
+        $this->messages = file("messages.txt");
+        return $this->messages;
+    }
 }
