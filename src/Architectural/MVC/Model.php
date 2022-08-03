@@ -12,4 +12,12 @@ class Model
         $this->messages[] = date("H:i:s") . " : " . $message;
     }
 
+    public function saveMessages()
+    {
+        $file = fopen("messages.txt", "a");
+        foreach ($this->messages as $message) {
+            fwrite($file, $message . "\n");
+        }
+    }
+
 }
