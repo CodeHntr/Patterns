@@ -13,4 +13,10 @@ class Controller
         $view->listMessages($messages);
     }
 
+    public function addMessage(string $message)
+    {
+        $model = new Model();
+        $model->addMessage($message);
+        $model->saveMessages();
+    }
 }
