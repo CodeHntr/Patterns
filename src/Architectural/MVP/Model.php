@@ -12,4 +12,10 @@ class Model
 
     }
 
+    public function saveNum()
+    {
+        file_put_contents('numbers.txt', $this->number);
+    }
+
+
 }
