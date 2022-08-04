@@ -13,5 +13,12 @@ class Presenter
         $this->view = $view;
     }
 
+    public function generateNum()
+    {
+        $this->model->generateNum();
+        $this->model->saveNum();
+        $num = $this->model->getNum();
+        $this->view->getNum($num);
+    }
 }
 
