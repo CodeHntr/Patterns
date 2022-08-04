@@ -17,5 +17,9 @@ class Model
         file_put_contents('numbers.txt', $this->number);
     }
 
-
+    public function getNum()
+    {
+        $this->number = file_get_contents('numbers.txt');
+        return $this->number;
+    }
 }
