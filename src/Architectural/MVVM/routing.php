@@ -60,3 +60,8 @@ function getById($pdo, $data)
     print_r($trafficLight->getById($data['id']));
 }
 
+function changeState($pdo, $data)
+{
+    $changer = new ViewModel($pdo);
+    $changer->changeState($data);
+}
