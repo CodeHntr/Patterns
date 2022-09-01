@@ -23,6 +23,13 @@ class ViewModel
         return $result;
     }
 
+    public function getById(int $id)
+    {
+        $trafficLight = new TrafficLight($this->pdo);
+
+        $trafficLight = $trafficLight->getById($id);
+        return json_encode($trafficLight, JSON_HEX_TAG | JSON_HEX_APOS | JSON_HEX_QUOT | JSON_HEX_AMP | JSON_UNESCAPED_UNICODE);
+    }
 
 
 }
