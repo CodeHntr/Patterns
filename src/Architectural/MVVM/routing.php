@@ -13,7 +13,9 @@ switch ($_REQUEST['type']) {
     case'getStreetLights':
         getStreetLights($pdo);
         break;
-
+    case 'deleteAll':
+        deleteAllTrafficLights($pdo);
+        break;
 }
 
 function create(array $data, $pdo)
