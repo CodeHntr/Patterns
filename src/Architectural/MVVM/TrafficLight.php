@@ -17,6 +17,13 @@ class TrafficLight implements Model
     public string $address;
     public int $state;
 
+    public function __construct(PDO $pdo, array $data = [])
+    {
+        $this->pdo = $pdo;
+        $this->id = $data['id'] ?? 0;
+        $this->address = $data['address'] ?? "";
+        $this->state = $data['state'] ?? self::STATE_GREEN;
+    }
 
 }
 
