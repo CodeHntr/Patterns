@@ -25,5 +25,21 @@ class TrafficLight implements Model
         $this->state = $data['state'] ?? self::STATE_GREEN;
     }
 
+    public function create(array $data)
+    {
+        $this->address = $data['address'];
+        $this->state = $data['state'];
+
+        $sql = sprintf(
+            "INSERT INTO `%s` (`address`, `state`) VALUES ('%s', '%d')",
+            $this->table,
+            $this->address,
+            $this->state
+        );
+        $this->pdo->query($sql);
+        $this->id = $this->pdo->lastInsertId();
+        return $this;
+    }
+
 }
 
