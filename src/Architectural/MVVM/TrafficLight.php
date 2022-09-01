@@ -41,5 +41,12 @@ class TrafficLight implements Model
         return $this;
     }
 
+    public function update(int $state, int $id)
+    {
+        $sql = sprintf("UPDATE `%s` SET `state`='%d' WHERE (`id`='%d')", $this->table, $state, $id);
+        $this->pdo->query($sql);
+    }
+
+
 }
 
