@@ -16,6 +16,9 @@ switch ($_REQUEST['type']) {
     case 'deleteAll':
         deleteAllTrafficLights($pdo);
         break;
+    case 'deleteById':
+        deleteTrafficLightById($pdo, $_POST);
+        break;
 }
 
 function create(array $data, $pdo)
