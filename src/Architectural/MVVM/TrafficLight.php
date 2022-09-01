@@ -47,6 +47,13 @@ class TrafficLight implements Model
         $this->pdo->query($sql);
     }
 
+    public function getById(int $id)
+    {
+        $sql = sprintf("SELECT `id`, `address`, `state` FROM `%s` WHERE (`id`='%d')", $this->table, $id);
+        $result = $this->pdo->query($sql);
+        return new TrafficLight($this->pdo, $result->fetch());
+    }
+
 
 }
 
