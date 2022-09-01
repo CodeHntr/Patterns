@@ -19,6 +19,9 @@ switch ($_REQUEST['type']) {
     case 'deleteById':
         deleteTrafficLightById($pdo, $_POST);
         break;
+    case 'showById':
+        getById($pdo, $_GET);
+        break;
 }
 
 function create(array $data, $pdo)
@@ -47,4 +50,5 @@ function deleteTrafficLightById($pdo, $data)
     $deletor = new ViewModel($pdo, $data);
     return $deletor->delete($data['id']);
 }
+
 
