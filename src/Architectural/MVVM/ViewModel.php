@@ -49,4 +49,9 @@ class ViewModel
 
     }
 
+    public function changeState($data)
+    {
+        $trafficLight = new TrafficLight($this->pdo, $data);
+        $trafficLight->update($data['state'], $data['id']);
+    }
 }
