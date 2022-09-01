@@ -16,6 +16,38 @@
 
 <body>
 
+<script>
+    $(document).ready(function() {
+
+        $.ajax({
+            method: "GET",
+            url: "routing.php",
+            data: {type: 'getStreetLights'},
+
+            success: function (response) {
+                let streetLights = JSON.parse(response);
+                let rows = '';
+                streetLights.forEach((streetLight) => {
+                    console.dir(streetLight);
+                    rows += "<tr><td>" + streetLight.id + "</td><td>" + streetLight.address + ' ' + "</td><td>" + streetLight.state + "</td></tr>";
+
+                });
+
+                console.dir(rows);
+                $('.tbTrafficLights ').append(rows);
+            },
+
+            error: function (response) {
+                console.error(response);
+            }
+        });
+
+
+
+    });
+
+</script>
+
 
 <h1>
     Додати світлофор
