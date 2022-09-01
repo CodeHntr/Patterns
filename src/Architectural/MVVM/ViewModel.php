@@ -37,6 +37,11 @@ class ViewModel
         return $trafficLight->getAll();
     }
 
+    public function deleteAll()
+    {
+        $trafficLight = new TrafficLight($this->pdo);
+        return $trafficLight->deleteAll();
+    }
 
 
 }
