@@ -13,3 +13,11 @@ switch ($_REQUEST['type']) {
 
 }
 
+function create(array $data, $pdo)
+{
+    $creator = new ViewModel($pdo, $data);
+    echo json_encode(
+        $creator->create($data),
+        JSON_HEX_TAG | JSON_HEX_APOS | JSON_HEX_QUOT | JSON_HEX_AMP | JSON_UNESCAPED_UNICODE
+    );
+}
