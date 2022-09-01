@@ -10,6 +10,9 @@ switch ($_REQUEST['type']) {
     case'create':
         create($_POST, $pdo);
         break;
+    case'getStreetLights':
+        getStreetLights($pdo);
+        break;
 
 }
 
@@ -21,3 +24,4 @@ function create(array $data, $pdo)
         JSON_HEX_TAG | JSON_HEX_APOS | JSON_HEX_QUOT | JSON_HEX_AMP | JSON_UNESCAPED_UNICODE
     );
 }
+
