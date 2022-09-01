@@ -54,6 +54,16 @@ class TrafficLight implements Model
         return new TrafficLight($this->pdo, $result->fetch());
     }
 
+    public function getAll()
+    {
+        $trafficLights = [];
+        $sql = sprintf("SELECT * FROM `%s` ", $this->table);
+        $result = $this->pdo->query($sql);
+        foreach($result->fetchAll() as $trafficLight){
+            $trafficLights[] = new TrafficLight($this->pdo, $trafficLight);
+        }
+        return $trafficLights;
+    }
 
 }
 
