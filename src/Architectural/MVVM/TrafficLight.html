@@ -17,6 +17,46 @@
 <body>
 
 
+<h1>
+    Додати світлофор
+</h1>
+
+<input type="text" name="address" class="address" placeholder="Адреса світлофора"> <br>
+<input type="text" name="state" class="state" placeholder="Стан"> <br>
+<button class="send">Додати Світлофор</button>
+
+<hr>
+<div id="trafficLightsTable">
+    <h2>Робочі світлофори</h2>
+    <table class="tbTrafficLights" border="2" align="">
+        <tr>
+            <th>ID</th>
+            <th>Address</th>
+            <th>State</th>
+        </tr>
+    </table>
+    <button class="deletor">Видалити всі світлофори</button>
+</div>
+
+<hr>
+
+<h2>Переключити світлофор</h2>
+<input type="text" name="changeState" class="changeState" placeholder="Вкажіть стан світлофора"> <br>
+<input type="text" name="changeById" class="changeById" placeholder="Вкажіть його Id">
+<button class ="changeId">Переключити світлофор</button>
+
+
+<hr>
+
+<h2>Видалити світлофор по id</h2>
+<input type="text" name="id" class="id" placeholder="Вкажіть id світлофора">
+<button class ="deleteById">Видалити</button>
+
+<hr>
+
+<h2>Показати світлофор</h2>
+<input type="text" name="byId" class="byId" placeholder="Вкажіть id світлофора">
+<button class ="showById">Показати світлофор</button>
 
 </body>
 </html>
