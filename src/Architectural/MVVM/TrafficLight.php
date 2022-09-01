@@ -65,5 +65,12 @@ class TrafficLight implements Model
         return $trafficLights;
     }
 
+    public function delete(int $id)
+    {
+        $sql = sprintf("DELETE FROM %s WHERE id=%d", $this->table, $id);
+        $this->pdo->query($sql);
+        return $this;
+    }
+
 }
 
