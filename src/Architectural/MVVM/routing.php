@@ -22,6 +22,9 @@ switch ($_REQUEST['type']) {
     case 'showById':
         getById($pdo, $_GET);
         break;
+    case 'changeState':
+        changeState($pdo, $_POST);
+        break;
 }
 
 function create(array $data, $pdo)
