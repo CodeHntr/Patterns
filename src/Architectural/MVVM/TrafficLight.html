@@ -121,6 +121,25 @@
         });
 
 
+        $('button.changeId').on('click', function() {
+
+            console.log('trafficlight are shown');
+            $.ajax({
+                method: "POST",
+                url: "routing.php",
+                data: {
+                    id: $('input.changeById').val(),
+                    state: $('input.changeState').val(),
+                    type: 'changeState'},
+                success: function() {location.reload();}
+            })
+
+            //success: function() {location.reload();}
+            //$("#trafficLightsTable").load("TrafficLight.html #tbTrafficLights");
+            $('input.changeById').val('');
+            $('input.changeState').val('');
+        });
+
     });
 
 </script>
