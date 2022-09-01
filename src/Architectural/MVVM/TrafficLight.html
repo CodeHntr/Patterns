@@ -42,6 +42,34 @@
             }
         });
 
+        $('button.send').on('click', function() {
+
+            $.ajax({
+                method: "POST",
+                url: "routing.php",
+                data: {
+                    address: $('input.address').val(),
+                    state: $('input.state').val(),
+                    type: 'create'
+                }
+            })
+                .done(function( response ) {
+                    let streetLight = JSON.parse(response);
+                    let rows =
+                        "<tr><td>" + streetLight.id
+                        + "</td><td>"
+                        + streetLight.address
+                        + ' '
+                        + "</td><td>"
+                        + streetLight.state
+                        + "</td></tr>";
+                    $('.tbTrafficLights ').append(rows);
+                });
+
+            $('input.address').val('');
+            $('input.state').val('');
+
+        });
 
 
     });
