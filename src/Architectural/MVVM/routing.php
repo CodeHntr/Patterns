@@ -33,3 +33,9 @@ function getStreetLights($pdo)
     echo json_encode($getter->getAll());
 }
 
+function deleteAllTrafficLights($pdo)
+{
+    $deletor = new ViewModel($pdo);
+    return $deletor->deleteAll();
+}
+
