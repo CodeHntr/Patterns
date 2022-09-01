@@ -72,5 +72,11 @@ class TrafficLight implements Model
         return $this;
     }
 
+    public function deleteAll()
+    {
+        $sql = sprintf("DELETE  FROM %s ", $this->table);
+        $this->pdo->query($sql);
+        return $this;
+    }
 }
 
