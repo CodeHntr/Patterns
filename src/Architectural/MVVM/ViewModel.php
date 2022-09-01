@@ -16,6 +16,13 @@ class ViewModel
 
     }
 
+    function create(array $data)
+    {
+        $trafficLight = new TrafficLight($this->pdo, $data);
+        $result = $trafficLight->create($data);
+        return $result;
+    }
+
 
 
 }
