@@ -51,4 +51,9 @@ function deleteTrafficLightById($pdo, $data)
     return $deletor->delete($data['id']);
 }
 
+function getById($pdo, $data)
+{
+    $trafficLight = new ViewModel($pdo);
+    print_r($trafficLight->getById($data['id']));
+}
 
