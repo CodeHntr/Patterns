@@ -99,6 +99,28 @@
             $('input.id').val('');
         });
 
+        $('button.showById').on('click', function() {
+
+            console.log('trafficlight are shown');
+            $.ajax({
+                method: "GET",
+                url: "routing.php",
+                data: {id: $('input.byId').val(), type: 'showById'},
+
+                success: function (response) {
+
+                    //{location.reload();}
+                    document.body.textContent = JSON.stringify(response);
+                    //console.log (response)
+                    $('.showTrafficLight').text(response);
+                }
+            })
+
+
+            $('input.byId').val('');
+        });
+
+
     });
 
 </script>
