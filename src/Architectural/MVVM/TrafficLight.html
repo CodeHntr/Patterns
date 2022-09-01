@@ -71,6 +71,18 @@
 
         });
 
+        $('button.deletor').on('click', function() {
+
+            console.log('Data deleted');
+            $.ajax({
+                method: "POST",
+                url: "routing.php",
+                data: {
+                    type: 'deleteAll'
+                }
+            })
+
+        });
 
     });
 
