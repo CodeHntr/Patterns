@@ -25,3 +25,9 @@ function create(array $data, $pdo)
     );
 }
 
+function getStreetLights($pdo)
+{
+    $getter = new ViewModel($pdo);
+    echo json_encode($getter->getAll());
+}
+
