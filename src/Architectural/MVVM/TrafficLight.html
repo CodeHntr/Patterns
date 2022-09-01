@@ -84,6 +84,21 @@
 
         });
 
+        $('button.deleteById').on('click', function() {
+
+            console.log('TrafficLight deleted');
+            $.ajax({
+                method: "POST",
+                url: "routing.php",
+                data: {
+                    id: $('input.id').val(),
+                    type: 'deleteById'
+                },
+                success: function() {location.reload();}
+            })
+            $('input.id').val('');
+        });
+
     });
 
 </script>
